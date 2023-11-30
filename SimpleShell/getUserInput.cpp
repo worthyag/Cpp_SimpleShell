@@ -6,7 +6,11 @@
 //
 
 #include "getUserInput.hpp"
+#include <iostream>
 
 std::string getUserInput() {
-    return "std::string getUserInput()";
+    std::string usersInput;
+    std::cout << "SimpleShell > ";
+    std::getline(std::cin, usersInput);
+    return usersInput;
 }
