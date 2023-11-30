@@ -4,11 +4,16 @@
 //
 //  Created by Worthy on 29/11/2023.
 //
+// Loading the project files.
+#include "getUserInput.hpp"
 
 #include <iostream>
 
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, Anjelle!\n";
+    
+    std::cout << getUserInput() << std::endl;
+    
     return 0;
 }
