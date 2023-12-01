@@ -17,11 +17,11 @@ std::vector<std::string> parseInput(std::string userInput) {
     
     // Iterating through the user input and splitting when a space is found.
     for (char c : userInput) {
-        if (c != ' ')
-            command += c;
+        if (!isblank(c))
+            command.append(1, c);
         else {
             commands.push_back(command);
-            command = "";
+            command.clear();
         }
     }
     
