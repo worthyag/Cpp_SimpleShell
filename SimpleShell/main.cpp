@@ -6,11 +6,16 @@
 //
 // Loading the project files.
 #include "getUserInput.hpp"
+#include "parseInput.hpp"
 
 #include <iostream>
 
 int main(int argc, const char * argv[]) {
-    std::cout << getUserInput() << std::endl;
+    std::string userInput {getUserInput()};
+    
+    for (std::string word : parseInput(userInput)) {
+        std::cout << word << std::endl;
+    }
     
     return 0;
 }
