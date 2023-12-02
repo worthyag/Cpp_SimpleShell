@@ -7,7 +7,6 @@
 
 #include "parseInput.hpp"
 #include <string>
-#include <iostream>
 #include <sstream>
 
 std::vector<std::string> parseInput(std::string userInput) {
@@ -42,6 +41,5 @@ std::vector<std::string> parseInputV1(std::string userInput) {
     
     return tokens;
 }
-
 
 
