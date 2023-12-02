@@ -8,25 +8,40 @@
 #include "parseInput.hpp"
 #include <string>
 #include <iostream>
-
+#include <sstream>
 
 std::vector<std::string> parseInput(std::string userInput) {
-    std::vector<std::string> commands {};
+    std::vector<std::string> tokens {};
+    std::istringstream userInputStream {userInput};
+    std::string token {};
     
-    std::string command {};
+    while (userInputStream >> token) {
+        tokens.push_back(token);
+    }
+    
+    return tokens;
+}
+
+std::vector<std::string> parseInputV1(std::string userInput) {
+    std::vector<std::string> tokens {};
+    
+    std::string token {};
     
     // Iterating through the user input and splitting when a space is found.
     for (char c : userInput) {
         if (!isblank(c))
-            command.append(1, c);
+            token.append(1, c);
         else {
-            commands.push_back(command);
-            command.clear();
+            tokens.push_back(token);
+            token.clear();
         }
     }
     
     // Need to make another push to account for the last command that is followed by a space.
-    commands.push_back(command);
+    tokens.push_back(token);
     
-    return commands;
+    return tokens;
 }
+
+
+

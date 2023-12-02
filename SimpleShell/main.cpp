@@ -14,8 +14,8 @@ int main(int argc, const char * argv[]) {
     std::string userInput {getUserInput()};
     
     for (std::string word : parseInput(userInput)) {
-        std::cout << word << std::endl;
+        std::cout << word << " | ";
     }
-    
+    std::cout << std::endl;
     return 0;
 }
